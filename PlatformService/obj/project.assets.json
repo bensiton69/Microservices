@@ -6003,11 +6003,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bensi\\source\\repos\\PlatformService\\PlatformService\\PlatformService.csproj",
+      "projectUniqueName": "C:\\Users\\bensi\\source\\repos\\Microservices\\PlatformService\\PlatformService.csproj",
       "projectName": "PlatformService",
-      "projectPath": "C:\\Users\\bensi\\source\\repos\\PlatformService\\PlatformService\\PlatformService.csproj",
+      "projectPath": "C:\\Users\\bensi\\source\\repos\\Microservices\\PlatformService\\PlatformService.csproj",
       "packagesPath": "C:\\Users\\bensi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bensi\\source\\repos\\PlatformService\\PlatformService\\obj\\",
+      "outputPath": "C:\\Users\\bensi\\source\\repos\\Microservices\\PlatformService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bensi\\AppData\\Roaming\\NuGet\\NuGet.Config",

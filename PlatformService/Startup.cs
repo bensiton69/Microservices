@@ -16,6 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
 using PlatformService.Interfaces;
 using PlatformService.Mapping;
+using PlatformService.SyncDataServices.Http;
 
 namespace PlatformService
 {
@@ -38,6 +39,7 @@ namespace PlatformService
             IMapper mapper = mapperConfig.CreateMapper();
 
             services.AddSingleton(mapper);
+            services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddDbContext<AppDbContext>(opt =>
                 opt.UseInMemoryDatabase("InMem"));
@@ -72,6 +74,7 @@ namespace PlatformService
             });
 
             Seed.PrepPopulation(app);
+            Console.WriteLine($"--> CommandService Endpoint {Configuration["CommandService"]}");
         }
     }
 }

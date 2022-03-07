@@ -9,12 +9,12 @@ using PlatformService.SyncDataServices.Http;
 namespace PlatformService.Controllers
 {
     [Route("api/[controller]")]
-    public class PlatformController:ControllerBase
+    public class PlatformsController:ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICommandDataClient _commandDataClient;
 
-        public PlatformController(IUnitOfWork unitOfWork, ICommandDataClient commandDataClient)
+        public PlatformsController(IUnitOfWork unitOfWork, ICommandDataClient commandDataClient)
         {
             _unitOfWork = unitOfWork;
             _commandDataClient = commandDataClient;

@@ -10,6 +10,6 @@ namespace PlatformService.Interfaces
     {
         Task<IEnumerable<PlatformReadDto>> GetAllPlatforms();
         Task<PlatformReadDto> GetPlatform(int id);
-        Task<PlatformReadDto> Add(PlatformCreateDto platformCreate);
+        PlatformReadDto Add(PlatformCreateDto platformCreate);
     }
 }

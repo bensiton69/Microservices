@@ -22,16 +22,22 @@ namespace PlatformService
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IConfiguration Configuration { get; }
+        private readonly IWebHostEnvironment _env;
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
+            this._env = env;
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Console.WriteLine("--> Using SqlServer Db");
+            services.AddDbContext<AppDbContext>(opt =>
+                opt.UseSqlServer(Configuration.GetConnectionString("PlatformsConn")));
+
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
@@ -41,8 +47,6 @@ namespace PlatformService
             services.AddSingleton(mapper);
             services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddDbContext<AppDbContext>(opt =>
-                opt.UseInMemoryDatabase("InMem"));
             services.AddScoped<IPlatformRepository, PlatformRepository>();
 
             services.AddControllers();
@@ -50,6 +54,7 @@ namespace PlatformService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlatformService", Version = "v1" });
             });
+            Console.WriteLine($"--> CommandService Endpoint {Configuration["CommandService"]}");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,8 +78,7 @@ namespace PlatformService
                 endpoints.MapControllers();
             });
 
-            Seed.PrepPopulation(app);
-            Console.WriteLine($"--> CommandService Endpoint {Configuration["CommandService"]}");
+            Seed.PrepPopulation(app, env.IsProduction());
         }
     }
 }

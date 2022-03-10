@@ -118,3 +118,4 @@ C:\Users\bensi\source\repos\Microservices\PlatformService\obj\Debug\net5.0\Platf
 C:\Users\bensi\source\repos\Microservices\PlatformService\obj\Debug\net5.0\ref\PlatformService.dll
 C:\Users\bensi\source\repos\Microservices\PlatformService\obj\Debug\net5.0\PlatformService.pdb
 C:\Users\bensi\source\repos\Microservices\PlatformService\obj\Debug\net5.0\PlatformService.genruntimeconfig.cache
+C:\Users\bensi\source\repos\Microservices\PlatformService\bin\Debug\net5.0\appsettings.Production.json

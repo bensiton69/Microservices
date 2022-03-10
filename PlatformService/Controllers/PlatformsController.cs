@@ -42,7 +42,7 @@ namespace PlatformService.Controllers
         [HttpPost]
         public async Task<ActionResult<PlatformReadDto>> PostPlatform([FromBody]PlatformCreateDto platformCreateDto)
         {
-            PlatformReadDto platformReadDto = await _unitOfWork.PlatformRepository.Add(platformCreateDto);
+            PlatformReadDto platformReadDto = _unitOfWork.PlatformRepository.Add(platformCreateDto);
             await _unitOfWork.CompleteAsync();
             try
             {

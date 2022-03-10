@@ -31,7 +31,7 @@ namespace PlatformService.Data
                 .FirstOrDefaultAsync(p => p.Id == id)) ;
         }
 
-        public async Task<PlatformReadDto> Add(PlatformCreateDto platformCreateDto)
+        public PlatformReadDto Add(PlatformCreateDto platformCreateDto)
         {
             Platform platform = _mapper.Map<PlatformCreateDto, Platform>(platformCreateDto);
             _context.Platforms.Add(platform);

@@ -17,6 +17,7 @@ using PlatformService.Data;
 using PlatformService.Interfaces;
 using PlatformService.Mapping;
 using PlatformService.SyncDataServices.Http;
+using PlatformService.AsyncDataServices;
 
 namespace PlatformService
 {
@@ -34,9 +35,18 @@ namespace PlatformService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            Console.WriteLine("--> Using SqlServer Db");
-            services.AddDbContext<AppDbContext>(opt =>
-                opt.UseSqlServer(Configuration.GetConnectionString("PlatformsConn")));
+            if (_env.IsProduction())
+            {
+                Console.WriteLine("--> Using SqlServer Db");
+                services.AddDbContext<AppDbContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("PlatformsConn")));
+            }
+            else
+            {
+                Console.WriteLine("--> Using InMem Db");
+                services.AddDbContext<AppDbContext>(opt =>
+                     opt.UseInMemoryDatabase("InMem"));
+            }
 
             var mapperConfig = new MapperConfiguration(mc =>
             {
@@ -46,6 +56,7 @@ namespace PlatformService
 
             services.AddSingleton(mapper);
             services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
+            services.AddSingleton<IMessageBusClient, MessageBusClient>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPlatformRepository, PlatformRepository>();
 

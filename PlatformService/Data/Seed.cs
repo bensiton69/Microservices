@@ -47,11 +47,6 @@ namespace PlatformService.Data
                     new Platform() { Name = "Kubernetes", Publisher = "Cloud native", Cost = "Free" }
                     );
                 context.SaveChangesAsync();
-                var platforms = context.Platforms.ToList();
-                foreach (var plat in platforms)
-                {
-                    System.Console.WriteLine($"{plat}");
-                }
             }
 
         }

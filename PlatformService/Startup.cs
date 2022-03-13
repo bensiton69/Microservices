@@ -55,10 +55,10 @@ namespace PlatformService
             IMapper mapper = mapperConfig.CreateMapper();
 
             services.AddSingleton(mapper);
-            services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
-            services.AddSingleton<IMessageBusClient, MessageBusClient>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPlatformRepository, PlatformRepository>();
+            services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
+            services.AddSingleton<IMessageBusClient, MessageBusClient>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -89,7 +89,8 @@ namespace PlatformService
                 endpoints.MapControllers();
             });
 
-            Seed.PrepPopulation(app, env.IsProduction());
+            // Seed.PrepPopulation(app, env.IsProduction());
+           PrepDb.PrepPopulation(app, env.IsProduction());
         }
     }
 }

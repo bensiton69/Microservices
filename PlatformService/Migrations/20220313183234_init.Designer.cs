@@ -9,7 +9,7 @@ using PlatformService.Data;
 namespace PlatformService.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220310110321_init")]
+    [Migration("20220313183234_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

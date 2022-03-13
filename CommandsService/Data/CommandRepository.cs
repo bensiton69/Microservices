@@ -48,6 +48,11 @@ namespace CommandsService.Data
             return _context.Platforms.Any(p => p.ExternalID == externalPlatformId);
         }
 
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
+
         public IEnumerable<PlatformreadDto> GetAllPlatforms()
         {
             return _mapper.Map<IEnumerable<PlatformreadDto>>(_context.Platforms.ToList());

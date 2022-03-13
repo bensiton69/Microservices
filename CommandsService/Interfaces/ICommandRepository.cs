@@ -6,6 +6,8 @@ namespace CommandsService.Interfaces
 {
     public interface ICommandRepository
     {
+        bool SaveChanges();
+
         // Platforms
         IEnumerable<PlatformreadDto> GetAllPlatforms();
         void CreatePlatform(Platform plat);

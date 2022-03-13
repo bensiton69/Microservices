@@ -12,7 +12,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using CommandsService.AsyncDataServices;
 using CommandsService.Data;
+using CommandsService.EventProcessing;
 using CommandsService.Interfaces;
 using CommandsService.Mapping;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +30,6 @@ namespace CommandsService
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             var mapperConfig = new MapperConfiguration(mc =>
@@ -42,14 +43,16 @@ namespace CommandsService
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICommandRepository, CommandRepository>();
 
+            services.AddHostedService<MessageBusSubscriber>();
+
             services.AddControllers();
+            services.AddSingleton<IEventProcessor, EventProcessor>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CommandsService", Version = "v1" });
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

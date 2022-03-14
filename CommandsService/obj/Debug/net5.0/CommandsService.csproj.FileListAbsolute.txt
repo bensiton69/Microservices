@@ -35,3 +35,7 @@ C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\Micro
 C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\appsettings.Production.json
 C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\Grpc.Core.Api.dll
+C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\Grpc.Net.Client.dll
+C:\Users\bensi\source\repos\Microservices\CommandsService\bin\Debug\net5.0\Grpc.Net.Common.dll

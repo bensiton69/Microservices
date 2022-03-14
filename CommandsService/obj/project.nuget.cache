@@ -1,10 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "L/8QQy1jiRw+uaz4W8Tnya1TGJt3LGidc0KxtguKXzS9PwzvD/yN1Utk/oLxqqaRYG/mdD/Cv+UsQK+WpfD1zQ==",
+  "dgSpecHash": "NmzRXGdAQoOIGfORD/Nt0TO8xvccmW5ZjYMLYj1m9cbauAhx+BndZSLp+SOBlzHPC3XXsfx5hhcWCHXuht+1WA==",
   "success": true,
   "projectFilePath": "C:\\Users\\bensi\\source\\repos\\Microservices\\CommandsService\\CommandsService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bensi\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\bensi\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
+    "C:\\Users\\bensi\\.nuget\\packages\\grpc.core.api\\2.43.0\\grpc.core.api.2.43.0.nupkg.sha512",
+    "C:\\Users\\bensi\\.nuget\\packages\\grpc.net.client\\2.43.0\\grpc.net.client.2.43.0.nupkg.sha512",
+    "C:\\Users\\bensi\\.nuget\\packages\\grpc.net.common\\2.43.0\\grpc.net.common.2.43.0.nupkg.sha512",
+    "C:\\Users\\bensi\\.nuget\\packages\\grpc.tools\\2.44.0\\grpc.tools.2.44.0.nupkg.sha512",
     "C:\\Users\\bensi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bensi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\bensi\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.0\\microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
